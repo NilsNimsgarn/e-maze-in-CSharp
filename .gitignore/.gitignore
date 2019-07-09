@@ -1,0 +1,35 @@
+using System;
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string befehl = Console.ReadLine();
+            int lang = befehl.Length;
+            int vertikal = 0;
+            int horizont = 0;
+           
+            for (int x = 0; x < lang; x++)
+            {
+                string richtung = befehl.Substring(x,1);
+                switch(richtung)
+                {
+                    case "L":
+                    horizont -= 1;
+                    break;
+                    case "R":
+                    horizont += 1;
+                    break;
+                    case "U":
+                    vertikal +=1;
+                    break;
+                    case "D":
+                    vertikal -=1;
+                    break;
+                }
+            }
+            Console.WriteLine(horizont + " " + vertikal);
+        }
+    }
+}
